@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Consciência Negra | Vozes da História</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #110e0c;
+    color: #fff;
+}
+
+header {
+    background: #19120e;
+    padding: 22px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #b88a38;
+}
+
+.logo {
+    color: #e8b84c;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #e8b84c;
+}
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background:
+    linear-gradient(90deg, #100b08 15%, transparent 100%),
+    url("https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1600")
+    center/cover;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    color: #e8b84c;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 78px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #e8b84c;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #e0d8d0;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #dba93d;
+    color: #21160d;
+    text-decoration: none;
+    padding: 16px 30px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+section {
+    padding: 90px 10%;
+}
+
+.section-tag {
+    color: #dcae49;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.intro {
+    color: #c8bdb3;
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.history {
+    background: #21160f;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.history-content img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.history-text h3 {
+    color: #e8b84c;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.history-text p {
+    color: #ded4cb;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.gallery-card {
+    background: #21160f;
+    border: 1px solid #493426;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px);
+    border-color: #dcae49;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.gallery-card div {
+    padding: 24px;
+}
+
+.gallery-card h3 {
+    color: #e8b84c;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.gallery-card p {
+    color: #d1c4b8;
+    line-height: 1.7;
+}
+
+.phrase {
+    background:
+    linear-gradient(#21160fdd,#21160fdd),
+    url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=1400")
+    center/cover;
+    text-align: center;
+    padding: 110px 10%;
+}
+
+.phrase h2 {
+    color: #edbd56;
+    font-size: clamp(30px, 5vw, 50px);
+}
+
+.phrase p {
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline {
+    max-width: 850px;
+    margin: 45px auto 0;
+    border-left: 3px solid #dcae49;
+    padding-left: 30px;
+}
+
+.event {
+    margin-bottom: 35px;
+}
+
+.event h3 {
+    color: #e8b84c;
+    margin-bottom: 10px;
+}
+
+.event p {
+    color: #d0c5ba;
+    line-height: 1.8;
+}
+
+footer {
+    padding: 50px 10%;
+    background: #090706;
+    text-align: center;
+    border-top: 1px solid #493426;
+}
+
+footer h2 {
+    color: #e8b84c;
+    font-size: 25px;
+}
+
+footer p {
+    color: #c9bcb0;
+    line-height: 2;
+}
+
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 65px 7%;
+        background-position: center;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .history-content {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">✊ VOZES NEGRAS</div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#historia">História</a>
+        <a href="#cultura">Cultura</a>
+        <a href="#personalidades">Personalidades</a>
+    </nav>
+</header>
+
+<!-- CAPA -->
+<main>
+<div class="hero" id="inicio">
+    <div class="hero-content">
+        <div class="tag">20 DE NOVEMBRO</div>
+
+        <h1>Orgulho de nossas <span>raízes.</span></h1>
+
+        <p>
+        Uma história de resistência, força, coragem e
+        conquistas. A Consciência Negra nos convida a
+        conhecer o passado, valorizar o presente e
+        transformar o futuro.
+        </p>
+
+        <a href="#sobre" class="btn">DESCUBRA NOSSA HISTÓRIA</a>
+    </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+    <div class="section-tag">Nossa identidade</div>
+
+    <h2>O que significa Consciência Negra?</h2>
+
+    <p class="intro">
+    É reconhecer a importância da população negra na
+    construção da sociedade, valorizar sua cultura,
+    suas histórias e suas conquistas. É também refletir
+    sobre o racismo e defender uma sociedade onde todas
+    as pessoas tenham os mesmos direitos e oportunidades.
+    </p>
+</section>
+
+<!-- HISTÓRIA -->
+<section class="history" id="historia">
+    <div class="section-tag">Conhecimento e memória</div>
+
+    <h2>Uma história de resistência</h2>
+
+    <div class="history-content">
+
+        <img
+        src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1000"
+        alt="Pessoas reunidas em comunidade">
+
+        <div class="history-text">
+            <h3>O passado que não podemos esquecer</h3>
+
+            <p>
+            Durante séculos, milhões de africanos foram
+            trazidos à força para o Brasil e submetidos
+            à escravidão.
+            </p>
+
+            <p>
+            Mesmo diante de tanta violência, homens e
+            mulheres negros resistiram, preservaram
+            suas tradições e lutaram por liberdade.
+            </p>
+
+            <p>
+            A história da população negra é marcada
+            pela coragem, pela resistência e pela
+            busca por dignidade.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CULTURA -->
+<section id="cultura">
+    <div class="section-tag">Herança e tradição</div>
+
+    <h2>A riqueza da cultura negra</h2>
+
+    <p class="intro">
+    A influência africana faz parte da identidade brasileira
+    e está presente em diversas manifestações culturais.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800"
+            alt="Música e expressão artística">
+
+            <div>
+                <h3>🎵 Música</h3>
+                <p>
+                O samba, o maracatu e outros ritmos
+                carregam a história e a tradição africana.
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=800"
+            alt="Dança">
+
+            <div>
+                <h3>💃 Dança</h3>
+                <p>
+                A capoeira e as danças tradicionais
+                representam expressão, identidade e resistência.
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800"
+            alt="Culinária">
+
+            <div>
+                <h3>🍲 Culinária</h3>
+                <p>
+                Acarajé, vatapá e outras receitas
+                representam a influência africana na cozinha.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PERSONALIDADES -->
+<section id="personalidades" class="history">
+    <div class="section-tag">Grandes referências</div>
+
+    <h2>Personalidades que fizeram história</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Zumbi.jpg/400px-Zumbi.jpg"
+            alt="Representação de Zumbi dos Palmares">
+
+            <div>
+                <h3>Zumbi dos Palmares</h3>
+                <p>
+                Líder do Quilombo dos Palmares,
+                tornou-se um dos maiores símbolos
+                da resistência contra a escravidão.
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Carolina_Maria_de_Jesus_%28cropped%29.jpg/400px-Carolina_Maria_de_Jesus_%28cropped%29.jpg"
+            alt="Carolina Maria de Jesus">
+
+            <div>
+                <h3>Carolina Maria de Jesus</h3>
+                <p>
+                Escritora brasileira que transformou
+                sua realidade em literatura e deu voz
+                a pessoas marginalizadas.
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Machado_de_Assis_by_Marc_Ferrez.jpg/400px-Machado_de_Assis_by_Marc_Ferrez.jpg"
+            alt="Machado de Assis">
+
+            <div>
+                <h3>Machado de Assis</h3>
+                <p>
+                Escritor negro brasileiro, autor de
+                grandes obras da literatura nacional
+                e fundador da Academia Brasileira de Letras.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- LINHA DO TEMPO -->
+<section>
+    <div class="section-tag">Memória e história</div>
+
+    <h2>Momentos importantes</h2>
+
+    <div class="timeline">
+
+        <div class="event">
+            <h3>1695 — Morte de Zumbi</h3>
+            <p>
+            Zumbi dos Palmares morreu em 20 de novembro,
+            data que se tornou símbolo da resistência negra.
+            </p>
+        </div>
+
+        <div class="event">
+            <h3>1888 — Abolição da escravidão</h3>
+            <p>
+            A Lei Áurea foi assinada em 13 de maio,
+            abolindo legalmente a escravidão no Brasil,
+            sem garantir igualdade social à população liberta.
+            </p>
+        </div>
+
+        <div class="event">
+            <h3>2003 — Lei 10.639</h3>
+            <p>
+            Tornou obrigatório o ensino de História e Cultura
+            Afro-Brasileira nas escolas.
+            </p>
+        </div>
+
+        <div class="event">
+            <h3>2023 — Feriado nacional</h3>
+            <p>
+            O dia 20 de novembro passou a ser feriado
+            nacional pela Lei 14.759.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- MENSAGEM FINAL -->
+<div class="phrase">
+    <h2>“Respeitar nossas raízes é valorizar nossa história.”</h2>
+
+    <p>
+    Que a igualdade não seja apenas uma palavra,
+    mas uma realidade. Que o respeito seja diário
+    e que nenhuma história seja esquecida.
+    </p>
+</div>
+
+</main>
+
+<footer>
+    <h2>✊ VOZES NEGRAS</h2>
+
+    <p>Consciência Negra — 20 de Novembro</p>
+
+    <p>
+    Valorizar a história. Celebrar a cultura.
+    Combater o racismo.
+    </p>
+
+    <p>Projeto educativo | 2026</p>
+</footer>
+
+</body>
+</html>
